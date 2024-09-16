@@ -5,3 +5,4 @@ rootProject.name = "kotlin-in-action"
 include("Chapter02")
 include("Chapter03")
 include("Chapter04")
+include("Chapter05")
