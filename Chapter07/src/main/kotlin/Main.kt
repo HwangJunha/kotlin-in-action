@@ -1,5 +1,6 @@
 package com.around
 
+import java.beans.PropertyChangeListener
 import java.time.LocalDate
 
 operator fun Char.times(count: Int) : String {
@@ -71,5 +72,22 @@ fun main() {
     for(dayOff in daysOff) {
         println(dayOff)
     }
+
+    val (name, ext) = splitFilename("example.txt")
+    println(name)
+    println(ext)
+
+    val emailPerson = EmailPerson("junha")
+    emailPerson.emails
+    emailPerson.emails
+
+    val salaryPerson = SalaryPerson("junha", 20, 2000)
+    salaryPerson.addPropertyChangeListener(
+        PropertyChangeListener { event ->
+            println("Property ${event.propertyName} changed " + "from ${event.oldValue} to ${event.newValue}")
+        }
+    )
+    salaryPerson.age = 21
+    salaryPerson.salary = 2100
 }
 
